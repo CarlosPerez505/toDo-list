@@ -26,7 +26,7 @@ function App() {
     const [updateData, setUpdateData] = useState('');
 
     // Add task
-    const AddTask = () => {
+    const addTask = () => {
     if (newTask) {
         let num = toDo.length + 1;
         let newEntry = { id: num, title: newTask, status: false}
@@ -84,37 +84,35 @@ function App() {
 
   return (
     <div className="App">
-      <br/><br/>
-        <h2>TO DO List App (ReactJs)</h2>
-        <br/><br/>
-        {/* Update Task */}
-        {updateData && updateData ? (
-          <UpdateForm
-              updateData={updateData}
-              changeTask={changeTask}
-              updateTask={updateTask}
-              cancelUpdate={cancelUpdate}/>
-        ) : (
-            <AddTaskForm
-            newTask={newTask}
-            setNewTask={setNewTask}
-            addTask={addTask}/>
+        <div className="box">
+            <br/><br/>
+            <h2>TO DO List App (ReactJs)</h2>
+            <br/><br/>
+            {/* Update Task */}
+            {updateData && updateData ? (
+                <UpdateForm
+                    updateData={updateData}
+                    changeTask={changeTask}
+                    updateTask={updateTask}
+                    cancelUpdate={cancelUpdate}/>
+            ) : (
+                <AddTaskForm
+                    newTask={newTask}
+                    setNewTask={setNewTask}
+                    addTask={addTask}/>
+            )}
 
+            {/* display ToDOs */}
+            {toDo && toDo.length ? '' : 'No Tasks...'}
+            <ToDo
+                toDo={toDo}
+                markDone={markDone}
+                setUpdateData={setUpdateData}
+                deleteTask={deleteTask}
+            />
+        </div>
+        </div>
 
-        )}
-
-
-
-
-
-
-
-
-        {/* display ToDOs */}
-        {toDo && toDo.length ? '' : 'No Tasks...'}
-
-
-    </div>
   );
 }
 

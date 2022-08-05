@@ -1,11 +1,11 @@
-import React from "@types/react";
+import React from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCircleCheck, faPen, faTrashCan} from "@fortawesome/free-solid-svg-icons";
 
 
 const ToDo = ({toDo, markDone, setUpdateData, deleteTask}) => {
     return(
-        <>
+        <div>
             {toDo && toDo.
             sort((a, b) => a.id > b.id ? 1 : -1)
                 .map((task, index) => {
@@ -38,7 +38,7 @@ const ToDo = ({toDo, markDone, setUpdateData, deleteTask}) => {
                     )
                 })
             }
-        </>
+        </div>
 
 
     )

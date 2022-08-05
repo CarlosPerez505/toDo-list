@@ -1,4 +1,4 @@
-import React from "@types/react";
+import React from "react";
 
 
 const UpdateForm = ({updateData, changeTask, updateTask, cancelUpdate}) => {
